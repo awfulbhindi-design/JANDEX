@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanDex - Global Species Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="jandex-container">
+    <header>
+        <div class="logo">JANDEX v3.0</div>
+        <div class="api-badges">
+            <span class="badge">GBIF</span>
+            <span class="badge">iNaturalist</span>
+            <span class="badge">EOL</span>
+            <span class="badge">IUCN</span>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="inputSpecies" placeholder="Enter species name (e.g. Pangolin, Harpy Eagle)...">
+        <button class="scan-btn" onclick="runJanDex()">INITIALIZE SCAN</button>
+    </div>
+
+    <div class="top-split">
+        <div class="left-panel">
+            <img id="mainImg" class="species-image" src="images/default.jpg" alt="Species">
+            <span class="img-source" id="imgCredit">System Ready</span>
+        </div>
+        
+        <div class="right-panel">
+            <div style="margin-bottom: 20px;">
+                <h1 id="commonName">---</h1>
+                <i id="scientificName">---</i>
+            </div>
+
+            <span class="data-label">Taxonomy (GBIF)</span>
+            <span id="taxFamily" class="data-value">---</span>
+
+            <span class="data-label">Conservation Status</span>
+            <span id="statusBadge" class="status-badge">Unknown</span>
+            <br>
+            <a id="iucnVerify" href="#" target="_blank" class="verify-link">[Verify on IUCN Red List]</a>
+
+            <span class="data-label">Observation Count</span>
+            <span id="obsCount" class="data-value">---</span>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <h3 class="section-head">Encyclopedia Entry</h3>
+        <p id="eolDesc" class="description">Scan a species to retrieve data.</p>
+    </div>
+
+    <div class="content-block">
+        <h3 class="section-head">Academic Resources</h3>
+        <div class="links-grid" id="resourceLinks">
+            <div style="color:#777;">Waiting for input...</div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
